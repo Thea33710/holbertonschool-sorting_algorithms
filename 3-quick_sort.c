@@ -6,7 +6,7 @@ int lemuto_partition(int *array, int low, int high, size_t size);
  * @a: Pointer to first integer
  * @b: Pointer to second integer
  */
-void swap(int *a, int *b )
+void swap(int *a, int *b)
 {
 	int tmp;
 	if (*a != *b)
@@ -49,9 +49,9 @@ int lemuto_partition(int *array, int low, int high, size_t size)
 	{
 		if (array[j] < pivot)
         {
-		swap(&array[low], &array[j]);
-		print_array(array, size);
-		low++;
+			swap(&array[low], &array[j]);
+			print_array(array, size);
+			low++;
 		}
 	}
 	swap(&array[low], &array[high]);
@@ -66,8 +66,6 @@ int lemuto_partition(int *array, int low, int high, size_t size)
 void quick_sort(int *array, size_t size)
 {
 	if (array == NULL || size < 2)
-	{
 	return;
-	}
 	qs_recusive(array, 0, size - 1, size);    
 }
