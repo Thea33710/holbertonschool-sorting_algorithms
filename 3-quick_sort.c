@@ -26,7 +26,7 @@ void swap(int *a, int *b)
  */
 void qs_recusive(int *array, int low, int high, size_t size)
 {
-		if (low < high)
+	if (low < high)
 	{
 	int pivot = lemuto_partition(array, low, high, size);
 
