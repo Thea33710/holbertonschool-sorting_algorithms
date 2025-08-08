@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "sort.h"
 
 /**
@@ -55,7 +54,7 @@ int lemuto_partition(int *array, int low, int high, size_t size)
 
 	for (j = low; j < high; j++)
 	{
-		if (array[j] < pivot)
+		if (array[j] <= pivot)
 		{
 			if (i != j)
 			{
@@ -82,7 +81,8 @@ int lemuto_partition(int *array, int low, int high, size_t size)
 void quick_sort(int *array, size_t size)
 {
 	if (array == NULL || size < 2)
+	{
 		return;
-
+	}
 	qs_recusive(array, 0, size - 1, size);
 }
