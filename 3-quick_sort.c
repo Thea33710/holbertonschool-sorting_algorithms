@@ -47,7 +47,7 @@ int lemuto_partition(int *array, int low, int high, size_t size)
 	int pivot = array[high];
 	int i = low;
 	int j;
-	
+
 	for (j = low; j < high; j++)
 	{
 		if (array[j] < pivot)
