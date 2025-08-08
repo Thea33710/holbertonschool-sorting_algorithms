@@ -45,20 +45,27 @@ void qs_recusive(int *array, int low, int high, size_t size)
 int lemuto_partition(int *array, int low, int high, size_t size)
 {
 	int pivot = array[high];
+	int i = low;
 	int j;
-
+	
 	for (j = low; j < high; j++)
 	{
 		if (array[j] < pivot)
 		{
-			swap(&array[low], &array[j]);
-			print_array(array, size);
-			low++;
+			if (i != j)
+			{
+				swap(&array[i], &array[j]);
+				print_array(array, size);
+			}
+			i++;
 		}
 	}
-	swap(&array[low], &array[high]);
-	print_array(array, size);
-	return (low);
+	if (i != high)
+	{
+		swap(&array[i], &array[high]);
+		print_array(array, size);
+	}
+	return (i);
 }
 /**
  * quick_sort - Sorts an array using quicksort
